@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blue Dot Media — One-Page Websites for Local Businesses</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&amp;display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF8F3;
+    --cream-dark: #F0EAE0;
+    --terra: #C8603A;
+    --terra-light: #E8856A;
+    --terra-dark: #9B4628;
+    --navy: #1A2340;
+    --navy-mid: #2E3D5E;
+    --ink: #1C1A18;
+    --muted: #7A7068;
+    --border: #DDD5C8;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,248,243,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 22px; font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--navy);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-logo span { color: var(--terra); }
+
+  .nav-right { display: flex; align-items: center; gap: 24px; }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+  }
+
+  .btn-primary {
+    background: var(--terra);
+    color: #fff;
+    padding: 10px 22px;
+    border: 1.5px solid var(--terra);
+  }
+
+  .btn-primary:hover {
+    background: var(--terra-dark);
+    border-color: var(--terra-dark);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--navy);
+    padding: 10px 22px;
+    border: 1.5px solid var(--navy);
+  }
+
+  .btn-outline:hover {
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .btn-outline-light {
+    background: transparent;
+    color: #fff;
+    padding: 12px 28px;
+    border: 1.5px solid rgba(255,255,255,0.5);
+    font-size: 13px;
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: #fff;
+  }
+
+  .btn-white {
+    background: #fff;
+    color: var(--navy);
+    padding: 14px 32px;
+    border: 1.5px solid #fff;
+    font-size: 14px;
+  }
+
+  .btn-white:hover {
+    background: var(--cream);
+    border-color: var(--cream);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 92vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--navy);
+    padding: 80px 6% 80px 7%;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--terra-light);
+    margin-bottom: 32px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block; width: 28px; height: 1px;
+    background: var(--terra-light);
+  }
+
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 5.5vw, 72px);
+    font-weight: 600;
+    line-height: 1.08;
+    color: #fff;
+    margin-bottom: 28px;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--terra-light);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.7;
+    max-width: 440px;
+    margin-bottom: 44px;
+  }
+
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .hero-stats {
+    margin-top: 60px;
+    display: flex; gap: 40px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 32px;
+  }
+
+  .stat-val {
+    font-family: var(--font-display);
+    font-size: 32px; font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 12px; color: rgba(255,255,255,0.5);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .hero-right {
+    background: var(--cream-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-right-inner {
+    height: 100%;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 60px 8% 60px 6%;
+    gap: 20px;
+  }
+
+  /* Mock website previews */
+  .mock-card {
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    padding: 20px;
+    box-shadow: 0 4px 24px rgba(26,35,64,0.08);
+    position: relative;
+  }
+
+  .mock-card.featured {
+    border-color: var(--terra);
+    border-width: 1.5px;
+  }
+
+  .mock-dots {
+    display: flex; gap: 5px; margin-bottom: 14px;
+  }
+
+  .mock-dots span {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--border);
+  }
+
+  .mock-img {
+    width: 100%; height: 90px;
+    background: linear-gradient(135deg, #e8d5c8 0%, #c8a898 100%);
+    border-radius: 3px; margin-bottom: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .mock-img.blue {
+    background: linear-gradient(135deg, #c8d8e8 0%, #98b8d8 100%);
+  }
+
+  .mock-img.green {
+    background: linear-gradient(135deg, #c8ddd0 0%, #98c0a8 100%);
+  }
+
+  .mock-title {
+    font-family: var(--font-display);
+    font-size: 15px; font-weight: 600;
+    color: var(--ink); margin-bottom: 6px;
+  }
+
+  .mock-line {
+    height: 6px; background: var(--cream-dark);
+    border-radius: 3px; margin-bottom: 5px;
+  }
+
+  .mock-line.short { width: 60%; }
+
+  .mock-badge {
+    position: absolute; top: -10px; right: 16px;
+    background: var(--terra);
+    color: #fff; font-size: 10px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 2px;
+  }
+
+  .mock-cta {
+    display: inline-block; margin-top: 10px;
+    background: var(--terra); color: #fff;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 6px 14px; border-radius: 2px;
+  }
+
+  /* ─── SECTION SHARED ─── */
+  section { padding: 96px 7%; }
+
+  .section-tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--terra);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .section-tag::before {
+    content: ''; display: block;
+    width: 20px; height: 1px; background: var(--terra);
+  }
+
+  .section-headline {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 600; line-height: 1.12;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+
+  .section-headline em { font-style: italic; color: var(--terra); }
+
+  .section-sub {
+    font-size: 16px; color: var(--muted);
+    max-width: 560px; line-height: 1.75;
+    margin-bottom: 52px;
+  }
+
+  /* ─── PROBLEM ─── */
+  .problem {
+    background: var(--navy);
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 80px;
+  }
+
+  .problem .section-headline { color: #fff; }
+  .problem .section-tag { color: var(--terra-light); }
+  .problem .section-tag::before { background: var(--terra-light); }
+  .problem .section-sub { color: rgba(255,255,255,0.6); }
+
+  .problem-right { display: flex; flex-direction: column; gap: 24px; }
+
+  .problem-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 24px 28px;
+  }
+
+  .problem-item .problem-item-tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; margin-bottom: 8px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .problem-item h4 {
+    font-family: var(--font-display);
+    font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 6px;
+  }
+
+  .problem-item p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+  .problem-item .problem-verdict {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 14px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px; border-radius: 2px;
+  }
+
+  .problem-item .verdict-no {
+    background: rgba(200,96,58,0.15);
+    color: var(--terra-light);
+    border: 1px solid rgba(200,96,58,0.3);
+  }
+
+  .problem-item .verdict-yes {
+    background: rgba(100,200,150,0.12);
+    color: #6dc898;
+    border: 1px solid rgba(100,200,150,0.25);
+  }
+
+  .problem-item.highlight {
+    border-color: rgba(100,200,150,0.3);
+    background: rgba(100,200,150,0.06);
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  .hiw { background: var(--cream-dark); }
+
+  .steps {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; margin-top: 16px;
+  }
+
+  .step {
+    background: var(--cream);
+    padding: 40px 36px;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: var(--font-display);
+    font-size: 64px; font-weight: 700;
+    color: var(--cream-dark);
+    line-height: 1; margin-bottom: 20px;
+  }
+
+  .step h3 {
+    font-family: var(--font-display);
+    font-size: 24px; font-weight: 600;
+    color: var(--navy); margin-bottom: 12px;
+  }
+
+  .step p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+  .step-icon {
+    width: 36px; height: 36px;
+    background: var(--terra);
+    border-radius: 2px;
+    margin-bottom: 20px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ─── VERTICALS ─── */
+  .verticals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px; margin-top: 8px;
+  }
+
+  .vertical-card {
+    background: #fff;
+    padding: 44px 36px;
+    border: 1px solid var(--border);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+    cursor: default;
+  }
+
+  .vertical-card:hover {
+    border-color: var(--terra);
+    transform: translateY(-3px);
+  }
+
+  .vert-icon {
+    font-family: var(--font-display);
+    font-size: 36px; font-weight: 700;
+    color: var(--terra); margin-bottom: 24px;
+    line-height: 1;
+  }
+
+  .vertical-card h3 {
+    font-family: var(--font-display);
+    font-size: 26px; font-weight: 600;
+    color: var(--navy); margin-bottom: 12px;
+  }
+
+  .vertical-card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+
+  .vert-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+
+  .tag {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 2px;
+    background: var(--cream-dark); color: var(--muted);
+  }
+
+  /* ─── PRICING ─── */
+  /* ─── PORTFOLIO MARQUEE ─── */
+  .portfolio-section { padding: 80px 0; overflow: hidden; background: var(--cream); }
+  .portfolio-section .section-headline { padding: 0 5%; }
+  .portfolio-section .section-tag { padding: 0 5%; }
+  .marquee-outer { overflow: hidden; width: 100%; }
+  .marquee-outer:hover .marquee-track { animation-play-state: paused; }
+  .marquee-track {
+    display: flex; gap: 16px; width: max-content;
+    animation: marquee-scroll 32s linear infinite;
+  }
+  @keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-card {
+    position: relative; display: block; border-radius: 6px; overflow: hidden;
+    flex-shrink: 0; width: 320px; height: 220px;
+    text-decoration: none; background: var(--navy);
+  }
+  .marquee-card--tall  { height: 280px; }
+  .marquee-card--wide  { width: 420px; }
+  .marquee-card img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;
+    transition: transform 0.4s ease, filter 0.4s ease; filter: brightness(0.93);
+  }
+  .marquee-card:hover img { transform: scale(1.04); filter: brightness(0.65); }
+  .marquee-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 28px 18px 16px;
+    background: linear-gradient(transparent, rgba(26,35,64,0.88));
+    display: flex; flex-direction: column; gap: 3px;
+    transform: translateY(8px); opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .marquee-card:hover .marquee-label { opacity: 1; transform: translateY(0); }
+  .marquee-label span:first-child {
+    font-family: var(--font-display); font-size: 16px; font-weight: 600; color: #fff;
+  }
+  span.marquee-tag {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.55); font-weight: 400; font-family: var(--font-body);
+  }
+
+  .pricing { background: var(--navy); }
+  .pricing .section-headline { color: #fff; }
+  .pricing .section-tag { color: var(--terra-light); }
+  .pricing .section-tag::before { background: var(--terra-light); }
+  .pricing .section-sub { color: rgba(255,255,255,0.55); }
+
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .price-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 44px 36px;
+    position: relative;
+    transition: background 0.2s ease;
+  }
+
+  .price-card.featured {
+    background: rgba(200,96,58,0.12);
+    border-color: var(--terra);
+  }
+
+  .price-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--terra-light);
+    margin-bottom: 16px;
+  }
+
+  .price-card.featured .price-label { color: var(--terra-light); }
+
+  .price-name {
+    font-family: var(--font-display);
+    font-size: 32px; font-weight: 700; color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .price-setup {
+    font-size: 13px; color: rgba(255,255,255,0.4);
+    margin-bottom: 28px; padding-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .price-setup strong { color: rgba(255,255,255,0.7); }
+
+  .price-monthly {
+    display: flex; align-items: baseline; gap: 4px;
+    margin-bottom: 28px;
+  }
+
+  .price-amount {
+    font-family: var(--font-display);
+    font-size: 48px; font-weight: 700; color: #fff;
+    line-height: 1;
+  }
+
+  .price-period { font-size: 14px; color: rgba(255,255,255,0.4); }
+
+  .price-features {
+    list-style: none; margin-bottom: 36px;
+    display: flex; flex-direction: column; gap: 11px;
+  }
+
+  .price-features li {
+    font-size: 14px; color: rgba(255,255,255,0.7);
+    display: flex; align-items: flex-start; gap: 10px;
+    line-height: 1.5;
+  }
+
+  .price-features li::before {
+    content: '↳';
+    color: var(--terra-light);
+    font-size: 12px; margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .price-pop {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--terra); color: #fff;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 4px 14px; border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  /* ─── DIFFERENTIATOR ─── */
+  .diff {
+    background: var(--cream-dark);
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 80px;
+  }
+
+  .diff-right { display: flex; flex-direction: column; gap: 28px; }
+
+  .diff-item {
+    display: flex; gap: 20px; align-items: flex-start;
+  }
+
+  .diff-num {
+    font-family: var(--font-display);
+    font-size: 18px; font-weight: 700; color: var(--terra);
+    width: 32px; flex-shrink: 0; padding-top: 2px;
+  }
+
+  .diff-item h4 {
+    font-family: var(--font-display);
+    font-size: 20px; font-weight: 600; color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .diff-item p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+  /* ─── FAQ ─── */
+  .faq-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; margin-top: 12px;
+  }
+
+  .faq-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 32px 32px;
+  }
+
+  .faq-item h4 {
+    font-family: var(--font-display);
+    font-size: 19px; font-weight: 600; color: var(--navy);
+    margin-bottom: 10px; line-height: 1.3;
+  }
+
+  .faq-item p { font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+  /* ─── CTA BAND ─── */
+  .cta-band {
+    background: var(--terra);
+    padding: 80px 7%;
+    text-align: center;
+  }
+
+  .cta-band h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 54px);
+    font-weight: 600; color: #fff;
+    line-height: 1.15; margin-bottom: 20px;
+  }
+
+  .cta-band h2 em { font-style: italic; opacity: 0.8; }
+
+  .cta-band p {
+    font-size: 16px; color: rgba(255,255,255,0.75);
+    margin-bottom: 40px;
+  }
+
+  .cta-band-btns {
+    display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact {
+    background: var(--cream);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start;
+  }
+
+  .contact-form {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+  .form-group label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+  }
+
+  .form-group input, .form-group textarea, .form-group select {
+    font-family: var(--font-body);
+    font-size: 15px; color: var(--ink);
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 2px; padding: 12px 14px;
+    outline: none; transition: border-color 0.2s ease;
+    width: 100%;
+  }
+
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--terra);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy);
+    padding: 48px 7%;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 20px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #fff; text-decoration: none;
+  }
+
+  .footer-logo span { color: var(--terra-light); }
+
+  .footer-links {
+    display: flex; gap: 28px; list-style: none; flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 13px; color: rgba(255,255,255,0.45);
+    text-decoration: none; letter-spacing: 0.04em;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover { color: var(--terra-light); }
+
+  .footer-copy {
+    font-size: 12px; color: rgba(255,255,255,0.3);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── SVG ICONS ─── */
+  .icon-svg { width: 18px; height: 18px; fill: #fff; }
+
+  /* ─── LANG CONTENT ─── */
+  
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 60px 6%; min-height: 80vh; }
+    .problem, .diff, .contact { grid-template-columns: 1fr; gap: 48px; }
+    .steps, .verticals-grid, .pricing-grid, .faq-grid { grid-template-columns: 1fr; }
+    nav .nav-right .btn { display: none; }
+  }
+</style>
+</head>
+<body>
+<!-- ─── NAV ─── -->
+<nav>
+<a class="nav-logo" href="#">BLUE DOT <span>·</span> MEDIA</a>
+<div class="nav-right">
+
+<a class="btn btn-primary" href="#pricing">
+<span>Get Started</span>
+
+</a>
+</div>
+</nav>
+<!-- ─── HERO ─── -->
+<section class="hero" style="padding: 0;">
+<div class="hero-left">
+<div class="hero-tag">Done-For-You · Est. 2011</div>
+<h1 class="hero-headline">
+      Your business,<br/><em>beautifully</em><br/>online.
+    </h1>
+
+<p class="hero-sub">
+      One stunning page. Contact form. Social links. First design review in as little as 48 hours — when you come prepared. Starting at $150/month.
+    </p>
+
+<div class="hero-ctas">
+<a class="btn btn-primary" href="#pricing">See Pricing</a>
+
+<a href="#" onclick="openCallModal(); return false;" class="btn btn-outline-light">Book a Free Call</a>
+
+</div>
+<div class="hero-stats">
+<div>
+<div class="stat-val">Fast</div>
+<div class="stat-label">When you're ready</div>
+
+</div>
+<div>
+<div class="stat-val">$150</div>
+<div class="stat-label">From / month</div>
+
+</div>
+<div>
+<div class="stat-val">3</div>
+<div class="stat-label">Languages spoken</div>
+
+</div>
+</div>
+</div>
+<div class="hero-right">
+<div class="hero-right-inner">
+
+<div class="mock-card featured" style="padding:0; overflow:hidden; position:relative;">
+  <div class="mock-badge">Live ↑</div>
+  <a href="https://makayogini.com/" target="_blank" rel="noopener" style="display:block;">
+    <img src="images/maka-yogini.png" alt="Maka Yogini" style="width:100%; height:200px; object-fit:cover; object-position:top; display:block;" />
+  </a>
+  <div style="padding:14px 16px;">
+    <div class="mock-title">Maka Yogini</div>
+    <div style="font-size:11px; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase; margin-top:2px;">Wellness & Movement</div>
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+  <div class="mock-card" style="padding:0; overflow:hidden;">
+    <a href="https://kobayasushi.com/" target="_blank" rel="noopener" style="display:block;">
+      <img src="images/kobaya-sushi.png" alt="Kobaya Sushi" style="width:100%; height:110px; object-fit:cover; object-position:top; display:block;" />
+    </a>
+    <div style="padding:10px 12px;">
+      <div class="mock-title" style="font-size:12px;">Kobaya Sushi</div>
+      <div style="font-size:10px; color:var(--muted); letter-spacing:0.05em; text-transform:uppercase; margin-top:2px;">Food & Hospitality</div>
+    </div>
+  </div>
+  <div class="mock-card" style="padding:0; overflow:hidden;">
+    <a href="https://sommom.com/" target="_blank" rel="noopener" style="display:block;">
+      <img src="images/sommom.png" alt="Sommom" style="width:100%; height:110px; object-fit:cover; object-position:top; display:block;" />
+    </a>
+    <div style="padding:10px 12px;">
+      <div class="mock-title" style="font-size:12px;">Sommom</div>
+      <div style="font-size:10px; color:var(--muted); letter-spacing:0.05em; text-transform:uppercase; margin-top:2px;">Wine & Travel</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- ─── PROBLEM ─── -->
+<section class="problem">
+<div>
+<div class="section-tag">The Problem</div>
+
+<h2 class="section-headline">Instagram is not a<br/><em>website.</em></h2>
+
+<p class="section-sub">Your clients exist everywhere online — but they can't find you, contact you, or trust you without a real home base. Not a Linktree. Not a Facebook page. A proper website you can call yours.</p>
+
+<a class="btn btn-primary" href="#pricing">Get My Page Online</a>
+
+</div>
+<div class="problem-right">
+<div class="problem-item">
+<div class="problem-item-tag">Option 1</div>
+<h4>DIY Platforms</h4>
+<p>Wix, Squarespace, and the like look simple — until you're two hours deep trying to move a button. You end up with something generic, and when it breaks, you're on your own.</p>
+<span class="problem-verdict verdict-no">Frustrating &amp; Time-Consuming</span>
+</div>
+<div class="problem-item">
+<div class="problem-item-tag">Option 2</div>
+<h4>Traditional Agencies</h4>
+<p>The results can be beautiful — but so is the invoice. $3,000–$10,000+, weeks of back and forth, and a scope built for corporations, not a yoga studio or a personal chef.</p>
+<span class="problem-verdict verdict-no">Expensive &amp; Overkill</span>
+</div>
+<div class="problem-item highlight">
+<div class="problem-item-tag">Option 3</div>
+<h4 style="color:#fff;">Blue Dot Media</h4>
+<p style="color: rgba(255,255,255,0.75);">Done for you, at a price that makes sense. A real human who listens, builds, and stays with you. No templates that look like everyone else's. No surprise bills.</p>
+<span class="problem-verdict verdict-yes">Professional &amp; Personal</span>
+</div>
+</div>
+</section>
+<!-- ─── HOW IT WORKS ─── -->
+<section class="hiw">
+<div class="section-tag">How It Works</div>
+
+<h2 class="section-headline">From call to <em>live</em> in 3 steps.</h2>
+
+<div class="steps">
+<div class="step">
+<div class="step-num">01</div>
+<h3>We talk.</h3>
+
+<p>A short 20-minute call to understand your business, your vibe, and what you need. You send us your logo, photos, and any copy. That's it.</p>
+
+</div>
+<div class="step">
+<div class="step-num">02</div>
+<h3>We build.</h3>
+
+<p>Once we have your content, we get to work. If you have everything ready — photos, copy, logo — we can have your first design draft back to you within 48 hours. From there, we refine together and typically go live within 1–2 weeks.</p>
+
+</div>
+<div class="step">
+<div class="step-num">03</div>
+<h3>We maintain.</h3>
+
+<p>Your site stays live, secure, and up to date — every month. You focus on your business. We handle everything online. Need an update? Just message us.</p>
+
+</div>
+</div>
+</section>
+<!-- ─── VERTICALS ─── -->
+<section>
+<div class="section-tag">Who We Build For</div>
+
+<h2 class="section-headline">We know your <em>industry.</em></h2>
+
+<p class="section-sub">Every vertical has its own template, its own tone, its own must-haves. We don't build generic sites — we build pages that already understand your business.</p>
+
+<div class="verticals-grid">
+<div class="vertical-card">
+<div class="vert-icon">✦</div>
+<h3>Wellness &amp;<br/>Movement</h3>
+
+<p>Yoga studios, personal trainers, pilates teachers, wellness coaches — we build pages that fill classes and build trust before the first session.</p>
+
+<div class="vert-tags">
+<span class="tag">Yoga</span>
+<span class="tag">Pilates</span>
+<span class="tag">PT</span>
+<span class="tag">Coaches</span>
+</div>
+</div>
+<div class="vertical-card">
+<div class="vert-icon">◈</div>
+<h3>Food &amp;<br/>Hospitality</h3>
+
+<p>Bakeries, personal chefs, private sommeliers, boutique hotels — your page should make people hungry and ready to book before they've even eaten.</p>
+
+<div class="vert-tags">
+<span class="tag">Bakeries</span>
+<span class="tag">Chefs</span>
+<span class="tag">Hotels</span>
+<span class="tag">Wine</span>
+</div>
+</div>
+<div class="vertical-card">
+<div class="vert-icon">◉</div>
+<h3>Travel &amp;<br/>Experiences</h3>
+
+<p>Retreat planners, travel curators, experience guides — your clients make decisions emotionally. Your page needs to transport them before they arrive.</p>
+
+<div class="vert-tags">
+<span class="tag">Retreats</span>
+<span class="tag">Travel</span>
+<span class="tag">Tours</span>
+<span class="tag">Guides</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ─── PORTFOLIO MARQUEE ─── -->
+<section class="portfolio-section">
+  <div class="section-tag" style="text-align:center; margin-bottom:8px;">Our Work</div>
+  <h2 class="section-headline" style="text-align:center; margin-bottom:48px;">Here's what we've <em>built.</em></h2>
+  <div class="marquee-outer">
+    <div class="marquee-track">
+
+      <!-- SET 1 — 8 unique images -->
+      <a href="https://makayogini.com/" target="_blank" rel="noopener" class="marquee-card">
+        <img src="images/maka-yogini.png" alt="Maka Yogini" />
+        <div class="marquee-label"><span>Maka Yogini</span><span class="marquee-tag">Wellness &amp; Movement</span></div>
+      </a>
+      <a href="https://kobayasushi.com/" target="_blank" rel="noopener" class="marquee-card marquee-card--tall">
+        <img src="images/kobaya-sushi.png" alt="Kobaya Sushi" />
+        <div class="marquee-label"><span>Kobaya Sushi</span><span class="marquee-tag">Food &amp; Hospitality</span></div>
+      </a>
+      <a href="https://sommom.com/" target="_blank" rel="noopener" class="marquee-card marquee-card--wide">
+        <img src="images/sommom.png" alt="Sommom" />
+        <div class="marquee-label"><span>Sommom</span><span class="marquee-tag">Wine &amp; Travel</span></div>
+      </a>
+      <a href="https://forlifetravelandretreats.com/" target="_blank" rel="noopener" class="marquee-card">
+        <img src="images/forlife-destinations.png" alt="For Life Travel &amp; Retreats" />
+        <div class="marquee-label"><span>For Life Travel &amp; Retreats</span><span class="marquee-tag">Travel &amp; Experiences</span></div>
+      </a>
+      <a href="https://kobayasushi.com/" target="_blank" rel="noopener" class="marquee-card marquee-card--tall">
+        <img src="images/kobaya-gallery.png" alt="Kobaya Gallery" />
+        <div class="marquee-label"><span>Kobaya Sushi</span><span class="marquee-tag">Food &amp; Hospitality</span></div>
+      </a>
+      <a href="https://sommom.com/" target="_blank" rel="noopener" class="marquee-card">
+        <img src="images/sommom-services.png" alt="Sommom Services" />
+        <div class="marquee-label"><span>Sommom</span><span class="marquee-tag">Wine &amp; Experiences</span></div>
+      </a>
+      <a href="https://forlifetravelandretreats.com/" target="_blank" rel="noopener" class="marquee-card marquee-card--wide">
+        <img src="images/forlife-who-we-serve.png" alt="For Life — Who We Serve" />
+        <div class="marquee-label"><span>For Life Travel &amp; Retreats</span><span class="marquee-tag">Travel &amp; Experiences</span></div>
+      </a>
+      <a href="https://kobayasushi.com/" target="_blank" rel="noopener" class="marquee-card">
+        <img src="images/kobaya-experience.png" alt="Kobaya Experience" />
+        <div class="marquee-label"><span>Kobaya Sushi</span><span class="marquee-tag">Food &amp; Hospitality</span></div>
+      </a>
+
+      <!-- SET 2 — exact duplicate for seamless infinite loop -->
+      <a href="https://makayogini.com/" target="_blank" rel="noopener" class="marquee-card">
+        <img src="images/maka-yogini.png" alt="Maka Yogini" />
+        <div class="marquee-label"><span>Maka Yogini</span><span class="marquee-tag">Wellness &amp; Movement</span></div>
+      </a>
+      <a href="https://kobayasushi.com/" target="_blank" rel="noopener" class="marquee-card marquee-card--tall">
+        <img src="images/kobaya-sushi.png" alt="Kobaya Sushi" />
+        <div class="marquee-label"><span>Kobaya Sushi</span><span class="marquee-tag">Food &amp; Hospitality</span></div>
+      </a>
+      <a href="https://sommom.com/" target="_blank" rel="noopener" class="marquee-card marquee-card--wide">
+        <img src="images/sommom.png" alt="Sommom" />
+        <div class="marquee-label"><span>Sommom</span><span class="marquee-tag">Wine &amp; Travel</span></div>
+      </a>
+      <a href="https://forlifetravelandretreats.com/" target="_blank" rel="noopener" class="marquee-card">
+        <img src="images/forlife-destinations.png" alt="For Life Travel &amp; Retreats" />
+        <div class="marquee-label"><span>For Life Travel &amp; Retreats</span><span class="marquee-tag">Travel &amp; Experiences</span></div>
+      </a>
+      <a href="https://kobayasushi.com/" target="_blank" rel="noopener" class="marquee-card marquee-card--tall">
+        <img src="images/kobaya-gallery.png" alt="Kobaya Gallery" />
+        <div class="marquee-label"><span>Kobaya Sushi</span><span class="marquee-tag">Food &amp; Hospitality</span></div>
+      </a>
+      <a href="https://sommom.com/" target="_blank" rel="noopener" class="marquee-card">
+        <img src="images/sommom-services.png" alt="Sommom Services" />
+        <div class="marquee-label"><span>Sommom</span><span class="marquee-tag">Wine &amp; Experiences</span></div>
+      </a>
+      <a href="https://forlifetravelandretreats.com/" target="_blank" rel="noopener" class="marquee-card marquee-card--wide">
+        <img src="images/forlife-who-we-serve.png" alt="For Life — Who We Serve" />
+        <div class="marquee-label"><span>For Life Travel &amp; Retreats</span><span class="marquee-tag">Travel &amp; Experiences</span></div>
+      </a>
+      <a href="https://kobayasushi.com/" target="_blank" rel="noopener" class="marquee-card">
+        <img src="images/kobaya-experience.png" alt="Kobaya Experience" />
+        <div class="marquee-label"><span>Kobaya Sushi</span><span class="marquee-tag">Food &amp; Hospitality</span></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section class="pricing" id="pricing">
+<div class="section-tag">Pricing</div>
+
+<h2 class="section-headline">Transparent. <em>Simple.</em> Yours.</h2>
+
+<p class="section-sub">A one-time setup fee, then a low monthly retainer. No surprise invoices. No lock-in contracts. Cancel anytime — and you keep your domain.</p>
+
+<div class="pricing-grid">
+<div class="price-card">
+<div class="price-label">Starter</div>
+
+<div class="price-name">Get Online</div>
+
+<div class="price-setup">Setup fee: <strong>$600–$700</strong> one-time</div>
+
+<div class="price-monthly">
+<div class="price-amount">$150</div>
+<div class="price-period">/mo</div>
+</div>
+<ul class="price-features">
+<li>1-page custom website</li>
+
+<li>Contact form included</li>
+
+<li>All social media links</li>
+
+<li>Mobile-optimized</li>
+
+<li>Hosting + SSL included</li>
+
+<li>First draft when content is ready</li>
+
+</ul>
+<a class="btn btn-outline-light" href="#contact" onclick="selectPlan('starter')">Start with Starter</a>
+
+</div>
+<div class="price-card featured">
+<div class="price-pop">Most Popular</div>
+
+<div class="price-label">Pro</div>
+
+<div class="price-name">Get Found</div>
+
+<div class="price-setup">Setup fee: <strong>$1,000–$1,500</strong> one-time</div>
+
+<div class="price-monthly">
+<div class="price-amount">$200</div>
+<div class="price-period">/mo</div>
+</div>
+<ul class="price-features">
+<li>Everything in Starter</li>
+
+<li>Google Analytics setup</li>
+
+<li>WhatsApp direct button</li>
+
+<li>1 content update/month</li>
+
+<li>Basic SEO setup</li>
+
+<li>Priority support</li>
+
+</ul>
+<a class="btn btn-white" href="#contact" onclick="selectPlan('pro')">Start with Pro</a>
+
+</div>
+<div class="price-card">
+<div class="price-label">Premium</div>
+
+<div class="price-name">Get Booked</div>
+
+<div class="price-setup">Setup fee: <strong>$1,800–$2,200</strong> one-time</div>
+
+<div class="price-monthly">
+<div class="price-amount">$299</div>
+<div class="price-period">/mo</div>
+</div>
+<ul class="price-features">
+<li>Everything in Pro</li>
+
+<li>Online booking link/widget</li>
+
+<li>Google reviews embed</li>
+
+<li>Dedicated account manager</li>
+
+<li>Unlimited minor edits</li>
+
+<li>Quarterly design refresh</li>
+
+</ul>
+<a class="btn btn-outline-light" href="#contact" onclick="selectPlan('premium')">Start with Premium</a>
+
+</div>
+</div>
+</section>
+<!-- ─── DIFFERENTIATOR ─── -->
+<section class="diff">
+<div>
+<div class="section-tag">Why Blue Dot Media</div>
+
+<h2 class="section-headline">A real human,<br/>in <em>your city.</em></h2>
+
+<p class="section-sub">Every competitor is either fully automated, anonymous, or built for volume. We're none of those things. We're a small boutique operation — and we treat every client like they're the only one.</p>
+
+</div>
+<div class="diff-right">
+<div class="diff-item">
+<div class="diff-num">01</div>
+<div>
+<h4>We speak Spanish, English, and French.</h4>
+
+<p>Your clients come from everywhere. Your website should speak to all of them. We build pages that communicate clearly to local and international audiences alike.</p>
+
+</div>
+</div>
+<div class="diff-item">
+<div class="diff-num">02</div>
+<div>
+<h4>We know the local market.</h4>
+
+<p>We understand seasonal businesses, tourist-facing hospitality, expat communities, and international clients — because we've worked across all of them.</p>
+
+
+</div>
+</div>
+<div class="diff-item">
+<div class="diff-num">03</div>
+<div>
+<h4>Fractional CTO-level thinking.</h4>
+
+<p>We're not just web designers. We're strategic operators who help you think about your digital presence like a business asset, not just a pretty page.</p>
+
+</div>
+</div>
+<div class="diff-item">
+<div class="diff-num">04</div>
+<div>
+<h4>You own everything.</h4>
+
+<p>Your domain, your content, your brand. If you ever leave us (we'll miss you), you take everything with you. No lock-in, ever.</p>
+
+</div>
+</div>
+</div>
+</section>
+<!-- ─── FAQ ─── -->
+<section style="background: var(--cream-dark);">
+<div class="section-tag">Questions</div>
+
+<h2 class="section-headline">Things people <em>ask us.</em></h2>
+
+<div class="faq-grid">
+<div class="faq-item">
+<h4>How long does it take to go live?</h4>
+
+<p>It depends on you as much as us. If you arrive with everything ready — logo, photos, copy, and a clear direction — we can have your first design draft back within 48 hours. From there, the review and refinement process typically takes 1–2 weeks before going live. The more organized your content, the faster we move.</p>
+
+</div>
+<div class="faq-item">
+<h4>Do I need to provide my own content?</h4>
+
+<p>Ideally yes — your real photos and words perform far better. But if you don't have everything ready, we can use curated stock photos and help you draft copy on the Pro and Premium plans.</p>
+
+</div>
+<div class="faq-item">
+<h4>What happens if I want to cancel?</h4>
+
+<p>Cancel anytime with 30 days' notice. Your domain is yours to keep. We'll provide a full export of your site so you can host it anywhere. No hostage situations.</p>
+
+</div>
+<div class="faq-item">
+<h4>Can I upgrade my plan later?</h4>
+
+<p>Absolutely. Many clients start with Starter, then upgrade once they're growing. The upgrade difference is credited against any additional setup work needed.</p>
+
+</div>
+<div class="faq-item">
+<h4>What do I need to get started?</h4>
+
+<p>Ideally: your logo, a few good photos of your business or work, a short description of what you do, and your social media handles. If you have an existing website you want to redesign, even better — that gives us a running start.</p>
+
+</div>
+<div class="faq-item">
+<h4>Where are you based? Do you work remotely?</h4>
+
+<p>We work with clients globally. Our process is fully remote — a quick call, some content over email, and we're off. No location limits.</p>
+
+</div>
+</div>
+</section>
+<!-- ─── CTA BAND ─── -->
+<section class="cta-band">
+<h2>Ready to exist <em>properly</em> online?</h2>
+
+<p>Book a free 20-minute call. No pitch, no pressure — just a conversation about your business and whether we're a fit.</p>
+
+<div class="cta-band-btns">
+<a href="#" onclick="openCallModal(); return false;" class="btn btn-white">Book Free Call</a>
+
+<a class="btn btn-outline-light" href="#pricing">View Pricing</a>
+
+</div>
+</section>
+<!-- ─── CONTACT ─── -->
+<section class="contact" id="contact">
+<div>
+<div class="section-tag">Get in Touch</div>
+
+<h2 class="section-headline">Let's talk about<br/>your <em>business.</em></h2>
+
+<p class="section-sub">Fill in the form and we'll get back to you within 24 hours to schedule your free discovery call. You can also reach us directly at <strong style="color:var(--terra);">lilieth@bluedotmedia.net</strong></p>
+
+<div style="margin-top: 32px; display: flex; flex-direction: column; gap: 14px;">
+<div style="font-size: 14px; color: var(--muted);">📍 Fully remote · Working globally</div>
+
+<div style="font-size: 14px; color: var(--muted);">💬 English · Español · Français</div>
+
+<div style="font-size: 14px; color: var(--muted);">⚡ Response within 24 hours</div>
+
+</div>
+</div>
+<div>
+<div class="contact-form" id="contact-form">
+<div class="form-row">
+<div class="form-group">
+<label>Your Name</label>
+<input id="cf-name" placeholder="Maria García" type="text"/>
+</div>
+<div class="form-group">
+<label>Business Name <span style="font-size:11px; color:var(--muted); font-weight:400;">(optional)</span></label>
+<input id="cf-biz" placeholder="Estudio Yoga Sol" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label>Email</label>
+<input id="cf-email" placeholder="maria@estudioyogasol.com" type="email"/>
+</div>
+<div class="form-group">
+<label>Business Type <span style="font-size:11px; color:var(--muted); font-weight:400;">(optional)</span></label>
+<select id="cf-industry">
+<option value="">Select your industry...</option>
+<option>Yoga / Pilates / Wellness</option>
+<option>Personal Trainer / Coach</option>
+<option>Bakery / Café</option>
+<option>Personal Chef / Sommelier</option>
+<option>Boutique Hotel / B&amp;B</option>
+<option>Travel / Retreats</option>
+<option>Other</option>
+</select>
+</div>
+<div class="form-group">
+<label>Which plan are you interested in?</label>
+<select id="cf-plan">
+<option value="">Not sure yet — let's talk</option>
+<option value="starter">Get Online — Starter ($150/mo)</option>
+<option value="pro">Get Found — Pro ($200/mo) · Most Popular</option>
+<option value="premium">Get Booked — Premium ($299/mo)</option>
+</select>
+</div>
+<div class="form-group">
+<label>Anything else?</label>
+<textarea id="cf-message" placeholder="Tell us a bit about your business and what you're hoping for..."></textarea>
+</div>
+<div id="cf-error" style="display:none; color:var(--terra); font-size:13px; margin-bottom:8px; padding:10px 14px; background:rgba(200,96,58,0.08); border-radius:3px; border-left:3px solid var(--terra);"></div>
+<button onclick="submitContactForm()" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 14px; border:none; cursor:pointer;">
+<span>Send Message →</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ─── FOOTER ─── -->
+<footer>
+<a class="footer-logo" href="#">BLUE DOT <span>·</span> MEDIA</a>
+<ul class="footer-links">
+<li><a href="#">How It Works</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#">Privacy</a></li>
+</ul>
+<p class="footer-copy">© 2011–2025 Blue Dot Media</p>
+
+</footer>
+<script>
+  // ─── PROJECTS SLIDESHOW DATA ───
+  // Add your project entries here once you share the links.
+  // Format: { url: 'https://...', title: 'Client Name', desc: 'Industry · Year' }
+  const projects = [
+    { url: 'https://kobayasushi.com/', img: 'images/kobaya-sushi.png', title: 'Kobaya Sushi', desc: 'Food & Hospitality' },
+    { url: 'https://forlifetravelandretreats.com/', img: 'images/forlife-travel.png', title: 'For Life Travel & Retreats', desc: 'Travel & Experiences' },
+    { url: 'https://makayogini.com/', img: 'images/maka-yogini.png', title: 'Maka Yogini', desc: 'Wellness & Movement' },
+    { url: 'https://sommom.com/', img: 'images/sommom.png', title: 'Sommom', desc: 'Wine & Travel' },
+  ];
+
+  // ─── BOOK A CALL MODAL ───
+  // Replace with your Formspree endpoint once you have it:
+  var CONTACT_FORM_ENDPOINT = 'https://formspree.io/f/xlgonyjy';
+
+
+
+  function openCallModal() {
+    var modal = document.getElementById('call-modal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCallModal() {
+    document.getElementById('call-modal').style.display = 'none';
+    document.body.style.overflow = '';
+    document.getElementById('call-form-wrap').style.display = 'block';
+    document.getElementById('call-success').style.display = 'none';
+    document.getElementById('call-name').value = '';
+    document.getElementById('call-biz').value = '';
+    document.getElementById('call-email').value = '';
+    document.getElementById('call-message').value = '';
+    var errEl = document.getElementById('call-form-error');
+    if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById('call-modal');
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) closeCallModal();
+      });
+    }
+  });
+
+  function submitCallForm() {
+    var name  = document.getElementById('call-name').value.trim();
+    var biz   = document.getElementById('call-biz').value.trim();
+    var email = document.getElementById('call-email').value.trim();
+    var msg   = document.getElementById('call-message').value.trim();
+    var errEl = document.getElementById('call-form-error');
+
+    errEl.style.display = 'none';
+    errEl.textContent = '';
+
+    if (!name || !email) {
+      errEl.textContent = 'Please enter your name and email address.';
+      errEl.style.display = 'block';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errEl.textContent = 'Please enter a valid email address.';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    var btn = document.getElementById('call-submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch(CALL_FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        business: biz || '—',
+        email: email,
+        message: msg || '—',
+        _subject: 'Book a Free Call — Blue Dot Media'
+      })
+    })
+    .then(function(res) {
+      if (res.ok) {
+        document.getElementById('call-form-wrap').style.display = 'none';
+        document.getElementById('call-success').style.display = 'block';
+      } else {
+        return res.json().then(function(data) {
+          throw new Error(data.error || 'Something went wrong. Please try again.');
+        });
+      }
+    })
+    .catch(function(err) {
+      errEl.textContent = err.message || 'Could not send your message. Please email us directly at lilieth@bluedotmedia.net';
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send Request →';
+    });
+  }
+
+  // ─── CONTACT FORM → THANK YOU PAGE ───
+  function submitContactForm() {
+    var name     = document.getElementById('cf-name').value.trim();
+    var biz      = document.getElementById('cf-biz').value.trim();
+    var email    = document.getElementById('cf-email').value.trim();
+    var industry = document.getElementById('cf-industry').value.trim();
+    var plan     = document.getElementById('cf-plan').value.trim();
+    var message  = document.getElementById('cf-message').value.trim();
+    var errorEl  = document.getElementById('cf-error');
+
+    errorEl.style.display = 'none';
+    errorEl.textContent = '';
+
+    var missing = [];
+    if (!name)    missing.push('Your Name');
+    if (!email)   missing.push('Email');
+    if (!message) missing.push('Message');
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email) {
+      errorEl.textContent = 'Please enter a valid email address.';
+      errorEl.style.display = 'block';
+      document.getElementById('cf-email').focus();
+      return;
+    }
+
+    if (missing.length > 0) {
+      errorEl.textContent = 'Please fill in the following required fields: ' + missing.join(', ') + '.';
+      errorEl.style.display = 'block';
+      return;
+    }
+
+    var btn = document.querySelector('#contact-form button');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch(CONTACT_FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        business: biz || '—',
+        email: email,
+        industry: industry || '—',
+        plan: plan || '—',
+        message: message,
+        _subject: 'New Contact Form — Blue Dot Media'
+      })
+    })
+    .then(function(res) {
+      if (res.ok) {
+        showThankyou();
+      } else {
+        return res.json().then(function(data) {
+          throw new Error(data.error || 'Something went wrong. Please try again.');
+        });
+      }
+    })
+    .catch(function(err) {
+      errorEl.textContent = err.message || 'Could not send your message. Please email lilieth@bluedotmedia.net directly.';
+      errorEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send Message →';
+    });
+  }
+
+  function showThankyou() {
+    document.getElementById('thankyou-page').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    window.scrollTo(0, 0);
+    buildSlideshow();
+  }
+
+  function closeThankyou() {
+    document.getElementById('thankyou-page').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // ─── SLIDESHOW ───
+  let currentSlide = 0;
+
+  function buildSlideshow() {
+    const container = document.getElementById('slides');
+    const dots = document.getElementById('slide-dots');
+    const prev = document.getElementById('slide-prev');
+    const next = document.getElementById('slide-next');
+
+    if (projects.length === 0) return;
+
+    container.innerHTML = '';
+    dots.innerHTML = '';
+
+    projects.forEach((p, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'slide';
+      slide.style.cssText = 'min-width:100%; height:100%; position:relative; overflow:hidden; cursor:pointer;';
+      const screenshotUrl = p.img;
+      slide.innerHTML =
+        '<a href="' + p.url + '" target="_blank" rel="noopener" style="display:block; width:100%; height:100%;">' +
+        '<img src="' + screenshotUrl + '" alt="' + p.title + '" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;" />' +
+        '<div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent,rgba(26,35,64,0.85)); padding:20px 24px;">' +
+        '<div style="font-family:\'Cormorant Garamond\',serif; font-size:20px; color:#fff; font-weight:600;">' + p.title + '</div>' +
+        '<div style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:2px; letter-spacing:0.08em; text-transform:uppercase;">' + p.desc + ' · Click to visit →</div>' +
+        '</div></a>';
+      container.appendChild(slide);
+
+      const dot = document.createElement('div');
+      dot.style.cssText = 'width:8px; height:8px; border-radius:50%; background:' + (i === 0 ? '#fff' : 'rgba(255,255,255,0.35)') + '; cursor:pointer; transition:background 0.2s;';
+      dot.onclick = (e) => { e.stopPropagation(); goToSlide(i); };
+      dots.appendChild(dot);
+    });
+
+    if (projects.length > 1) {
+      prev.style.display = 'block';
+      next.style.display = 'block';
+    }
+
+    currentSlide = 0;
+    updateSlideCaption();
+  }
+
+  function goToSlide(n) {
+    currentSlide = (n + projects.length) % projects.length;
+    document.getElementById('slides').style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+    document.querySelectorAll('#slide-dots div').forEach((d, i) => {
+      d.style.background = i === currentSlide ? '#fff' : 'rgba(255,255,255,0.35)';
+    });
+    updateSlideCaption();
+  }
+
+  function prevSlide() { goToSlide(currentSlide - 1); }
+  function nextSlide() { goToSlide(currentSlide + 1); }
+
+  function updateSlideCaption() {
+    document.getElementById('slide-caption').textContent = '';
+  }
+
+  // ─── PLAN AUTO-SELECT ───
+  function selectPlan(slug) {
+    var sel = document.getElementById('cf-plan');
+    if (!sel) return;
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].value === slug) {
+        sel.selectedIndex = i;
+        // Add a brief highlight so the user notices it was pre-selected
+        sel.style.transition = 'background 0.4s ease';
+        sel.style.background = 'rgba(200,96,58,0.08)';
+        setTimeout(function() { sel.style.background = ''; }, 1200);
+        break;
+      }
+    }
+  }
+
+  // Auto-select if page loads with a plan hash e.g. #contact?plan=pro
+  document.addEventListener('DOMContentLoaded', function() {
+    var hash = window.location.hash;
+    var match = hash.match(/plan=([a-z]+)/);
+    if (match) selectPlan(match[1]);
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.step, .vertical-card, .price-card, .faq-item, .diff-item, .problem-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+<!-- ─── BOOK A CALL MODAL ─── -->
+<div id="call-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(26,35,64,0.85); z-index:999; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:var(--cream); border-radius:6px; padding:44px 40px; max-width:520px; width:100%; position:relative;">
+    <button onclick="closeCallModal()" style="position:absolute; top:16px; right:20px; background:none; border:none; font-size:22px; cursor:pointer; color:var(--muted); line-height:1;">×</button>
+    <div style="font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--terra); margin-bottom:12px;">Free Discovery Call</div>
+    <h3 style="font-family:var(--font-display); font-size:28px; font-weight:600; color:var(--navy); margin-bottom:8px;">Let's talk about your project.</h3>
+    <p style="font-size:14px; color:var(--muted); margin-bottom:28px; line-height:1.7;">Tell us a little about yourself and what you need. We'll get back to you within 24 hours to schedule a call.</p>
+    <div id="call-form-wrap">
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div class="form-group"><label>Your Name</label><input type="text" id="call-name" placeholder="Jane Smith"></div>
+          <div class="form-group"><label>Business Name</label><input type="text" id="call-biz" placeholder="My Yoga Studio"></div>
+        </div>
+        <div class="form-group"><label>Your Email</label><input type="email" id="call-email" placeholder="jane@myyogastudio.com"></div>
+        <div class="form-group"><label>What do you need?</label><textarea id="call-message" style="min-height:90px;" placeholder="Briefly describe your business and what kind of website you're looking for..."></textarea></div>
+        <div id="call-form-error" style="display:none; color:var(--terra); font-size:13px; margin-bottom:8px; padding:10px 14px; background:rgba(200,96,58,0.08); border-radius:3px; border-left:3px solid var(--terra);"></div>
+        <button id="call-submit-btn" onclick="submitCallForm()" class="btn btn-primary" style="width:100%; padding:14px; font-size:14px; border:none; cursor:pointer;">Send Request →</button>
+      </div>
+    </div>
+    <div id="call-success" style="display:none; text-align:center; padding:20px 0;">
+      <div style="font-size:36px; margin-bottom:16px;">✉</div>
+      <h4 style="font-family:var(--font-display); font-size:22px; color:var(--navy); margin-bottom:8px;">Message sent!</h4>
+      <p style="font-size:14px; color:var(--muted);">We'll be in touch within 24 hours to schedule your free call.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── THANK YOU PAGE ─── -->
+<div id="thankyou-page" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:var(--cream); z-index:998; overflow-y:auto;">
+  <div style="max-width:900px; margin:0 auto; padding:80px 5%;">
+    <a href="#" onclick="closeThankyou(); return false;" style="font-size:13px; color:var(--muted); text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; margin-bottom:48px;">← Back to Blue Dot Media</a>
+    <div style="font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--terra); margin-bottom:16px;">Thank You</div>
+    <h2 style="font-family:var(--font-display); font-size:clamp(36px,5vw,60px); font-weight:600; color:var(--navy); line-height:1.1; margin-bottom:20px;">We got your message.<br><em style="color:var(--terra);">We'll be in touch soon.</em></h2>
+    <p style="font-size:16px; color:var(--muted); max-width:560px; line-height:1.75; margin-bottom:60px;">Expect to hear from us within 24 hours. In the meantime, take a look at some of the work we've done for businesses just like yours.</p>
+
+    <div style="font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--navy); margin-bottom:24px;">Past Projects</div>
+
+    <!-- SLIDESHOW -->
+    <div style="position:relative; background:var(--navy); border-radius:6px; overflow:hidden; aspect-ratio:16/9; max-height:500px;">
+      <div id="slides" style="display:flex; transition:transform 0.5s ease; height:100%;">
+        <!-- Slides injected by JS — populated with project screenshots -->
+        <div class="slide" style="min-width:100%; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; padding:40px;">
+          <div style="font-family:var(--font-display); font-size:22px; color:rgba(255,255,255,0.4); text-align:center;">Project screenshots coming soon</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.25);">Share your project links and we'll add them here</div>
+        </div>
+      </div>
+      <button onclick="prevSlide()" id="slide-prev" style="display:none; position:absolute; left:16px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.15); border:none; color:#fff; width:40px; height:40px; border-radius:50%; font-size:18px; cursor:pointer; backdrop-filter:blur(4px);">‹</button>
+      <button onclick="nextSlide()" id="slide-next" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.15); border:none; color:#fff; width:40px; height:40px; border-radius:50%; font-size:18px; cursor:pointer; backdrop-filter:blur(4px);">›</button>
+      <div id="slide-dots" style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%); display:flex; gap:8px;"></div>
+    </div>
+    <!-- Caption -->
+    <div id="slide-caption" style="text-align:center; margin-top:16px; font-size:13px; color:var(--muted); letter-spacing:0.04em; min-height:20px;"></div>
+  </div>
+</div>
+
+</body>
+</html>
