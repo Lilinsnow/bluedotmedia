@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.bluedotmedia.com/sitemap.xml
+Sitemap: https://www.bluedotmedia.net/sitemap.xml
